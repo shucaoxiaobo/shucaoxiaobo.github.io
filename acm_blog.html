@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="stylesheets/blog.css" media="screen" title="no title" charset="utf-8">
+    <title>acm_blog</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+    var _self="undefined"!=typeof window?window:"undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?self:{},Prism=function(){var e=/\blang(?:uage)?-(?!\*)(\w+)\b/i,t=_self.Prism={util:{encode:function(e){return e instanceof n?new n(e.type,t.util.encode(e.content),e.alias):"Array"===t.util.type(e)?e.map(t.util.encode):e.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/\u00a0/g," ")},type:function(e){return Object.prototype.toString.call(e).match(/\[object (\w+)\]/)[1]},clone:function(e){var n=t.util.type(e);switch(n){case"Object":var a={};for(var r in e)e.hasOwnProperty(r)&&(a[r]=t.util.clone(e[r]));return a;case"Array":return e.map&&e.map(function(e){return t.util.clone(e)})}return e}},languages:{extend:function(e,n){var a=t.util.clone(t.languages[e]);for(var r in n)a[r]=n[r];return a},insertBefore:function(e,n,a,r){r=r||t.languages;var l=r[e];if(2==arguments.length){a=arguments[1];for(var i in a)a.hasOwnProperty(i)&&(l[i]=a[i]);return l}var o={};for(var s in l)if(l.hasOwnProperty(s)){if(s==n)for(var i in a)a.hasOwnProperty(i)&&(o[i]=a[i]);o[s]=l[s]}return t.languages.DFS(t.languages,function(t,n){n===r[e]&&t!=e&&(this[t]=o)}),r[e]=o},DFS:function(e,n,a,r){r=r||{};for(var l in e)e.hasOwnProperty(l)&&(n.call(e,l,e[l],a||l),"Object"!==t.util.type(e[l])||r[e[l]]?"Array"!==t.util.type(e[l])||r[e[l]]||(r[e[l]]=!0,t.languages.DFS(e[l],n,l,r)):(r[e[l]]=!0,t.languages.DFS(e[l],n,null,r)))}},plugins:{},highlightAll:function(e,n){for(var a,r=document.querySelectorAll('code[class*="language-"], [class*="language-"] code, code[class*="lang-"], [class*="lang-"] code'),l=0;a=r[l++];)t.highlightElement(a,e===!0,n)},highlightElement:function(n,a,r){for(var l,i,o=n;o&&!e.test(o.className);)o=o.parentNode;o&&(l=(o.className.match(e)||[,""])[1],i=t.languages[l]),n.className=n.className.replace(e,"").replace(/\s+/g," ")+" language-"+l,o=n.parentNode,/pre/i.test(o.nodeName)&&(o.className=o.className.replace(e,"").replace(/\s+/g," ")+" language-"+l);var s=n.textContent,u={element:n,language:l,grammar:i,code:s};if(!s||!i)return t.hooks.run("complete",u),void 0;if(t.hooks.run("before-highlight",u),a&&_self.Worker){var g=new Worker(t.filename);g.onmessage=function(e){u.highlightedCode=e.data,t.hooks.run("before-insert",u),u.element.innerHTML=u.highlightedCode,r&&r.call(u.element),t.hooks.run("after-highlight",u),t.hooks.run("complete",u)},g.postMessage(JSON.stringify({language:u.language,code:u.code,immediateClose:!0}))}else u.highlightedCode=t.highlight(u.code,u.grammar,u.language),t.hooks.run("before-insert",u),u.element.innerHTML=u.highlightedCode,r&&r.call(n),t.hooks.run("after-highlight",u),t.hooks.run("complete",u)},highlight:function(e,a,r){var l=t.tokenize(e,a);return n.stringify(t.util.encode(l),r)},tokenize:function(e,n){var a=t.Token,r=[e],l=n.rest;if(l){for(var i in l)n[i]=l[i];delete n.rest}e:for(var i in n)if(n.hasOwnProperty(i)&&n[i]){var o=n[i];o="Array"===t.util.type(o)?o:[o];for(var s=0;s<o.length;++s){var u=o[s],g=u.inside,c=!!u.lookbehind,f=0,h=u.alias;u=u.pattern||u;for(var p=0;p<r.length;p++){var d=r[p];if(r.length>e.length)break e;if(!(d instanceof a)){u.lastIndex=0;var m=u.exec(d);if(m){c&&(f=m[1].length);var y=m.index-1+f,m=m[0].slice(f),v=m.length,k=y+v,b=d.slice(0,y+1),w=d.slice(k+1),P=[p,1];b&&P.push(b);var A=new a(i,g?t.tokenize(m,g):m,h);P.push(A),w&&P.push(w),Array.prototype.splice.apply(r,P)}}}}}return r},hooks:{all:{},add:function(e,n){var a=t.hooks.all;a[e]=a[e]||[],a[e].push(n)},run:function(e,n){var a=t.hooks.all[e];if(a&&a.length)for(var r,l=0;r=a[l++];)r(n)}}},n=t.Token=function(e,t,n){this.type=e,this.content=t,this.alias=n};if(n.stringify=function(e,a,r){if("string"==typeof e)return e;if("Array"===t.util.type(e))return e.map(function(t){return n.stringify(t,a,e)}).join("");var l={type:e.type,content:n.stringify(e.content,a,r),tag:"span",classes:["token",e.type],attributes:{},language:a,parent:r};if("comment"==l.type&&(l.attributes.spellcheck="true"),e.alias){var i="Array"===t.util.type(e.alias)?e.alias:[e.alias];Array.prototype.push.apply(l.classes,i)}t.hooks.run("wrap",l);var o="";for(var s in l.attributes)o+=(o?" ":"")+s+'="'+(l.attributes[s]||"")+'"';return"<"+l.tag+' class="'+l.classes.join(" ")+'" '+o+">"+l.content+"</"+l.tag+">"},!_self.document)return _self.addEventListener?(_self.addEventListener("message",function(e){var n=JSON.parse(e.data),a=n.language,r=n.code,l=n.immediateClose;_self.postMessage(t.highlight(r,t.languages[a],a)),l&&_self.close()},!1),_self.Prism):_self.Prism;var a=document.getElementsByTagName("script");return a=a[a.length-1],a&&(t.filename=a.src,document.addEventListener&&!a.hasAttribute("data-manual")&&document.addEventListener("DOMContentLoaded",t.highlightAll)),_self.Prism}();"undefined"!=typeof module&&module.exports&&(module.exports=Prism),"undefined"!=typeof global&&(global.Prism=Prism);
+    </script>
+    <script type="text/javascript">
+    Prism.languages.clike={comment:[{pattern:/(^|[^\\])\/\*[\w\W]*?\*\//,lookbehind:!0},{pattern:/(^|[^\\:])\/\/.*/,lookbehind:!0}],string:/(["'])(\\(?:\r\n|[\s\S])|(?!\1)[^\\\r\n])*\1/,"class-name":{pattern:/((?:\b(?:class|interface|extends|implements|trait|instanceof|new)\s+)|(?:catch\s+\())[a-z0-9_\.\\]+/i,lookbehind:!0,inside:{punctuation:/(\.|\\)/}},keyword:/\b(if|else|while|do|for|return|in|instanceof|function|new|try|throw|catch|finally|null|break|continue)\b/,"boolean":/\b(true|false)\b/,"function":/[a-z0-9_]+(?=\()/i,number:/\b-?(?:0x[\da-f]+|\d*\.?\d+(?:e[+-]?\d+)?)\b/i,operator:/--?|\+\+?|!=?=?|<=?|>=?|==?=?|&&?|\|\|?|\?|\*|\/|~|\^|%/,punctuation:/[{}[\];(),.:]/};
+    </script>
+    <script type="text/javascript">
+    Prism.languages.c=Prism.languages.extend("clike",{keyword:/\b(asm|typeof|inline|auto|break|case|char|const|continue|default|do|double|else|enum|extern|float|for|goto|if|int|long|register|return|short|signed|sizeof|static|struct|switch|typedef|union|unsigned|void|volatile|while)\b/,operator:/\-[>-]?|\+\+?|!=?|<<?=?|>>?=?|==?|&&?|\|?\||[~^%?*\/]/,number:/\b-?(?:0x[\da-f]+|\d*\.?\d+(?:e[+-]?\d+)?)[ful]*\b/i}),Prism.languages.insertBefore("c","string",{macro:{pattern:/(^\s*)#\s*[a-z]+([^\r\n\\]|\\.|\\(?:\r\n?|\n))*/im,lookbehind:!0,alias:"property",inside:{string:{pattern:/(#\s*include\s*)(<.+?>|("|')(\\?.)+?\3)/,lookbehind:!0},directive:{pattern:/(#\s*)\b(define|elif|else|endif|error|ifdef|ifndef|if|import|include|line|pragma|undef|using)\b/,lookbehind:!0,alias:"keyword"}}},constant:/\b(__FILE__|__LINE__|__DATE__|__TIME__|__TIMESTAMP__|__func__|EOF|NULL|stdin|stdout|stderr)\b/}),delete Prism.languages.c["class-name"],delete Prism.languages.c["boolean"];
+    </script>
+    <script type="text/javascript">
+    !function(){"undefined"!=typeof self&&self.Prism&&self.document&&Prism.hooks.add("complete",function(e){if(e.code){var t=e.element.parentNode,s=/\s*\bline-numbers\b\s*/;if(t&&/pre/i.test(t.nodeName)&&(s.test(t.className)||s.test(e.element.className))&&!e.element.querySelector(".line-numbers-rows")){s.test(e.element.className)&&(e.element.className=e.element.className.replace(s,"")),s.test(t.className)||(t.className+=" line-numbers");var n,a=e.code.match(/\n(?!$)/g),l=a?a.length+1:1,m=new Array(l+1);m=m.join("<span></span>"),n=document.createElement("span"),n.className="line-numbers-rows",n.innerHTML=m,t.hasAttribute("data-start")&&(t.style.counterReset="linenumber "+(parseInt(t.getAttribute("data-start"),10)-1)),e.element.appendChild(n)}}})}();
+    </script>
+    <script type="text/javascript">
+    !function(){if("undefined"!=typeof self&&self.Prism&&self.document){var e={css:"CSS",clike:"C-like",javascript:"JavaScript",abap:"ABAP",actionscript:"ActionScript",apacheconf:"Apache Configuration",apl:"APL",applescript:"AppleScript",asciidoc:"AsciiDoc",aspnet:"ASP.NET (C#)",autoit:"AutoIt",autohotkey:"AutoHotkey",basic:"BASIC",csharp:"C#",cpp:"C++",coffeescript:"CoffeeScript","css-extras":"CSS Extras",fsharp:"F#",glsl:"GLSL",http:"HTTP",inform7:"Inform 7",json:"JSON",latex:"LaTeX",lolcode:"LOLCODE",matlab:"MATLAB",mel:"MEL",nasm:"NASM",nginx:"nginx",nsis:"NSIS",objectivec:"Objective-C",ocaml:"OCaml",parigp:"PARI/GP",php:"PHP","php-extras":"PHP Extras",powershell:"PowerShell",jsx:"React JSX",rest:"reST (reStructuredText)",sas:"SAS",sass:"Sass (Sass)",scss:"Sass (Scss)",sql:"SQL",typescript:"TypeScript",vhdl:"VHDL",vim:"vim",wiki:"Wiki markup",yaml:"YAML"};Prism.hooks.add("before-highlight",function(s){var a=s.element.parentNode;if(a&&/pre/i.test(a.nodeName)){var t,i,r=a.getAttribute("data-language")||e[s.language]||s.language.substring(0,1).toUpperCase()+s.language.substring(1),l=a.previousSibling;l&&/\s*\bprism-show-language\b\s*/.test(l.className)&&l.firstChild&&/\s*\bprism-show-language-label\b\s*/.test(l.firstChild.className)?i=l.firstChild:(t=document.createElement("div"),i=document.createElement("div"),i.className="prism-show-language-label",t.className="prism-show-language",t.appendChild(i),a.parentNode.insertBefore(t,a)),i.innerHTML=r}})}}();
+    </script>
+    <script type="text/x-mathjax-config">
+    if (typeof MathJaxListener !== 'undefined') {
+      MathJax.Hub.Register.StartupHook('End', function () {
+        MathJaxListener.invokeCallbackForKey_('End');
+      });
+    }
+    </script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <div class="block">
+      <h1>acm</h1>
+    </div>
+    <div class="block">
+      <h1>小白书学习笔记</h1>
+      <p>标题中的小白书就是《算法竞赛入门经典（第二版）》，鉴于在知乎以及各位学长的大力推荐下，开始用这本作为自己的程序算法竞赛的入门书籍。在参考费曼技巧，也就是，如果学习者无法将自己学到的知识清晰完成的讲给别人听，并能使人听懂，那么这个学习者也就没有完全掌握。这里，我就将自己学习小白书的种种理解以及学习过程，通过一种类似教学的口气写下，既能自我学习又能传递经验。</p>
+
+      <h1 id="toc_0">第一部分 语言篇</h1>
+
+      <hr>
+
+      <h2 id="toc_1">第1章程序设计入门</h2>
+
+      <ul>
+      <li>1 算术表达式</li>
+      <li>2 变量及其输入</li>
+      <li>3 顺序结构程序设计</li>
+      <li>4 分支结构程序设计
+      ***
+      ### 1. 算术表达式
+      作为程序设计的入门的第一课，上来书本首先给我们的是如下的概念：
+      &gt; 计算机速度快，很适合做计算和逻辑判断工作。本章首先介绍顺序结构程序设计，其基本思路是：把需要计算机完成的工作分成若干个步骤，然后依次让计算机执行。</li>
+      </ul>
+
+      <p>程序是为了解决问题而生。程序设计，作为一项“解决问题”的比赛，它不需要花里胡哨的图形界面，它需要的的最本质的东西，也就是：
+      * 输入，将问题的给的条件，输入进电脑，通过一系列处理转化为，程序需要的数据。
+      * 计算将问题转化为数学模型，在通过代码实现，使用计算机的计算能力解决问题。
+      * 输入，最后对数学模型得出的答案，加以处理，返回题目需要的数据。
+      每一步环环相扣，缺一不可。</p>
+
+      <p>在理解程序设计的概念之后，小白书给了我第一个程序</p>
+
+      <div><pre class="line-numbers"><code class="language-c">#include &lt;stdio.h&gt;
+      int main(){
+        printf(&quot;%d\n&quot;,1+2);
+        return 0;
+      }</code></pre></div>
+
+      <p>本着将基础打好，也就是避免在以后的学习中，因为基础语法的不过关，在学习算法的时候仍然因为程序语法错误而报错。
+      这里我开始对每一行的代码解释，以确保我对每一段代码并非是表面意义上的写出。</p>
+
+      <div><pre class="line-numbers"><code class="language-c">#include &lt;stdio.h&gt;</code></pre></div>
+
+      <p>首先出现的代码，可以注意到这里的代码，和之后代码风格完全不同，这行代码，首先它是以＃开始，中间使用&lt;&gt;，代码末尾也没有；结束。
+      于是我上网百度了一下这段代码，以下是百度百科给出的回答</p>
+
+      <blockquote>
+      <p>＃include<stdio.h>是在程序编译之前要处理的内容，称为编译预处理命令。编译预处理命令还有很多，它们都以“#”开头，并且不用分号结尾，所以不是c语言的程序语句。</p>
+      </blockquote>
+
+      <p>随后我上网继续查找这个，这行代码中，include，以及stdio，甚至是&quot;&lt;&gt;&quot;这个符号的意思。
+      include 为文件包含命令，其意义是把尖括号或者&lt;&gt;内指定的文件包含到本程序中，成为本程序的一部分。被包含的文件由编译器系统提供的，其扩展名为.h
+      而stdio为standard input output的缩写，意为“标准输入输出”
+      也就是说，在c语言程序运行开始前，也就是在</p>
+
+      <div><pre class="line-numbers"><code class="language-c">int main()
+      {
+      return 0;
+      }</code></pre></div>
+
+      <p>这段代码运行前，c语言有一个预处理的过程，这个过程中，它会引入，你需要c语言程序执行的一些函数的文件，就比如，printf()这个函数，就是系统送你的，你只需要引入就行了，而不用自己大费周折，从头自己先def定义一个printf()的函数。
+      之后我们碰见的就是这段代码</p>
+
+      <div><pre class="line-numbers"><code class="language-c">int main()
+      {
+
+      return 0;
+      }</code></pre></div>
+
+      <p>这里，出现了不少东西，&quot;int&quot; &quot;main&quot; &quot;return&quot; &quot;0&quot;，以及“{};”这三个符号。
+      说实话一开始上来碰见这些的东西就有点蒙，听网上讲c语言的课程好像在这里通常都是让我们原封不动地抄下来，中间再加个printf(&quot;hello,world&quot;)；就结束了，没有任何的解释。
+      但是，单纯的抄下来，对于我，多年的理科经验告诉我。一个陌生的，不能了解透彻的，单纯只是记住的知识点，日后总是会让我吃不少苦。
+      于是，我又去查了一下有关这方面的知识。
+      根据我在<a href="http://www.cnblogs.com/pmer/archive/2011/09/08/2171823.html#!comments">五花八门的main()</a>这篇文章中的了解，我在这里简单梳理一下。</p>
+
+      <p>首先，我们在各式各样的有关c语言的书上可以看见各式各样的有关于这个主函数的写法。那么有关于c语言最早的写法是什么样子的呢？？</p>
+
+      <blockquote>
+      <p>最初main()函数的写法非常简洁，那个时候的C程序员哪怕一个字符似乎都不肯多写。不知道是因为当时键盘质量不好还是因为编辑器太糟糕的缘故，那个时代的C程序员似乎惊人地一致崇尚“简约”——甚至可以说是“至简”。</p>
+      </blockquote>
+
+      <div><pre class="line-numbers"><code class="language-c">main()
+      {
+      printf(&quot;hello,world\n&quot;);
+      }</code></pre></div>
+
+      <p>从上面可以看出，最早的c语言程序的写法，没有返回值类型的定义“int”，没有return 0；甚至连＃include<stido.h>都没有。</p>
+
+      <blockquote>
+      <p>在《The C Programming Language》的第一版中确实没有。那个时代的C语言，返回值类型为int的函数不用声明。不过在该书的第二版（1988）中这个程序被改成了</p>
+      </blockquote>
+
+      <div><pre class="line-numbers"><code class="language-c">#include &lt;stdio.h&gt;
+      main(){
+      printf(&quot;hello,world\n&quot;);
+      }</code></pre></div>
+
+      <p>这里注意一下，出现＃include的写法是在1988年，也就是最早的c标准，ANSI C（也叫c89）出现的前一年，作为行业入门的教科书，里面的代码一定程度上逐渐关注代码写法的规范性，虽然我们熟悉的int main＋return 0还没有出现，但是＃include已经登场。
+      但是大家不要心急，int main很快就进入c语言的编写历史中。在＃include出现的不到一年后，在随后的ANSI C的标准中，返回值类型为int的函数不用声明当时编写者的这一习惯已经开始被c语言标准制定者所不倡导</p>
+
+      <blockquote>
+      <p>返回值类型为int的函数不用声明的规则没有改变。改变了的是观念，人们已经不再倾向于代码的“至简”，而开始倾向于在代码中交代清楚每一个标识符的来龙去脉。从C89开始倡导在函数调用之前一定要有函数声明，但并没有强求，而在C99这已经是强制性的要求了。由于《The C Programming Language》第二版正值ANSI C标准颁布（1989）前夕出版，所以这种变化也应该视为ANSI C标准的倾向性以及K&amp;R对新标准的认同。尽管这个例子没有完全反映出来这种认同。</p>
+      </blockquote>
+
+      <p>这里出现了一个很奇怪的现象，就是为什么《The C Programming Language》第二版书中范例代码却不去按照ANSI C提倡的代码规范给出，一种“正确”的写法呢？</p>
+
+      <blockquote>
+      <p>因为这个main()的定义并没有按照函数原型(Function prototype)的方式来写，C90中规定不带参数的main()函数应该这样写：int main(void) { /<em>. . .</em>/}但同时规定那个int可以省略。C90把()内不写任何内容视为过时的写法，尽管C90无奈地容忍了它(The use of function declarators with empty parentheses (not prototype-format parameter type declarators) is an obsolescent feature.)。</p>
+      </blockquote>
+
+      <p>所以，我们简单的理一下逻辑，其实在C90时代，也就是1990年美国国家标准协会采纳为ISO/IEC 9899:1990的标准真正规范的写法应该是</p>
+
+      <div><pre class="line-numbers"><code class="language-c">#include&lt;stdio.h&gt;
+      int main(void)
+      {printf(&quot;hello,world\n&quot;)}</code></pre></div>
+
+      <p>所以看到这里，我们已经发现了，我们的int main以及＃include都已经出炉，就剩下return 0还没出现。其实在这其中，我们也可以从中发现，其实我们写的代码中，有些时候的报错，其实是每一代语言标准制定者希望行业按照某种规范来书写代码，所以不让我们的代码通过。
+      对于上面，为什么C90会容忍不规范的写法，原因也很简单，积重难返。
+      对于return 0的出现其实在《The C Programming Language》第二版中就已经出现了，但是在这版书中，关于return的写法还出现了如下的例子</p>
+
+      <div><pre class="line-numbers"><code class="language-c">#include &lt;stdio.h&gt;
+      main(int argc,char *argv[])
+      {int found = 0 ;
+      /*……计算found的值 */
+      return found;
+      }</code></pre></div>
+
+      <p>在那个C99和C11还未出现的年代，这种诡异的写法是一种被允许的，它也是一种尝试。但是在如今，你如果写入你的c语言程序里面，相信你还没来得及编译的时候，就被老师发现，当作反面例子的典型，用来教育一届又一届的学弟学妹们。</p>
+
+      <div><pre class="line-numbers"><code class="language-c">int argc,char *argv[]</code></pre></div>
+
+      <p>这两个数据，是这里出现的新玩意，简单解释一下，就是，当你在运行的程序的时候，你可以在运行的同时，就加上参数，就比如</p>
+
+      <div><pre class="line-numbers"><code class="language-c"> ~/test.EXE   a   b  c  d  </code></pre></div>
+
+      <p>当你在你的电脑运行这样一个命令的时候</p>
+
+      <blockquote>
+      <p>argc记录了用户在运行程序的命令行中输入的参数的个数。  arg[]指向的数组中至少有一个字符指针，即arg[0].他通常指向程序中的可执行文件的文件名。在有些版本的编译器中还包括程序文件所在的路径。</p>
+      </blockquote>
+
+      <p>然后你电脑里面内部就是这样的</p>
+
+      <div><pre class="line-numbers"><code class="language-c">argc   =   4         
+      argv[0]   =   &quot;a&quot;     
+      argv[1]   =   &quot;b&quot;     
+      argv[2]   =   &quot;c&quot;     
+      argv[3]   =   &quot;d&quot;</code></pre></div>
+
+      <p>让我们再回到，“return 0；”。
+      关于return 0，你肯定要问了，那么远古c语言程序不写return 0的时候，计算机在干嘛？？难道还自动帮程序员写这条么？？</p>
+
+      <blockquote>
+      <p>按照C90标准，会返回一个不确定的int类型的值，如果确实不关心这个返回值是多少，不写确实可以。但C99却要求编译器在编译的时候帮忙给补上这个“return 0;”，C99在必须写int这个问题上没有迁就懒人，但在这里却对偷懒的做法给予了迁就。</p>
+      </blockquote>
+
+      <p>现在我们重新来理整个程序的思路
+      首先，当我们使用我们的C语言程序的时候，用＃include预处理，然后开始调用主函数，最后主函数返回给操作系统一个值以表明程序是在何种状态下结束的，然后整个程序结束。中间其实存在着大量的底层的原理，例如编译器，操作系统在一个完整的c语言程序中是如何参与，我不得而知。这个问题可能需要留到我大二的时候，学操作系统这门课的时候再来解答了。
+      当然，最后的最后，通过一系列了解，我想C语言标准制定者最喜欢的写法，应该如下：</p>
+
+      <div><pre class="line-numbers"><code class="language-c">int main(void){
+      /*  */
+      return 0;
+      }</code></pre></div>
+
+      <p>或者</p>
+
+      <div><pre class="line-numbers"><code class="language-c">int main(int argc ,char *argv[]){
+      /* */
+      return 0;}</code></pre></div>
+
+    </div>
+  </body>
+</html>
