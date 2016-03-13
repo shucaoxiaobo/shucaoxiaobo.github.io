@@ -131,7 +131,23 @@ body{
 .header{
   font-family: Roboto Mono;
 }
+.button01{
+  margin-top: 40px;
+  margin-bottom: 5px;
+  padding: 10px;
+}
+.button02{
+  margin-top: 5px;
+  padding: 10px;
+}
 a{
-  margin-top: 50px;
-
+  align-items: center;
+  color: rgb(89, 89, 91);
+  font-family: 'Roboto', 'Noto', sans-serif;
+  font-size: 15px;
+  font-weight:normal;
+  text-decoration: none;
+}
+a:hover{
+  font-weight: bold;
 }
