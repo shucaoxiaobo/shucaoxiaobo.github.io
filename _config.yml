@@ -1,7 +1,7 @@
 # Site settings
 title: CaoHu
 url: "http://shucaoxiaobo.github.io/"    # the protocol and hostname of your site, eg. `http://zhaoyuxiang.cn/blog`
-baseurl: "http://shucaoxiaobo.github.io/" # the prefix of your site uri, eg. `/bohu-jekyll-theme` or just one slash `/`
+baseurl: "http://shucaoxiaobo.github.io" # the prefix of your site uri, eg. `/bohu-jekyll-theme` or just one slash `/`
 #timezone: Asia/Shanghai
 description: 曹晓波的个人博客
 # Your information
