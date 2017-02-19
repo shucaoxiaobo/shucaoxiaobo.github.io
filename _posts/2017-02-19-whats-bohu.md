@@ -4,7 +4,7 @@ title: Whats BoHu?
 author: CK
 date:   2017-02-19
 categories: BoHu
-permalink: /Whats-Bohu
+permalink: /blog/Whats-Bohu
 ---
 
 
