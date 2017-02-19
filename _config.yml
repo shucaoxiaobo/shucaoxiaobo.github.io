@@ -26,7 +26,7 @@ disqus_shortname: zhaoyuxiang
 # duoshuo_shortname: clark-zhao
 # get one: http://duoshuo.com/create-site/
 
-permalink: /archivers/:title
+permalink: /:title
 gems:
  - jekyll-paginate
  - jekyll-gist
