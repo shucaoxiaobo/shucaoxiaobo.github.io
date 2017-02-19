@@ -6,13 +6,13 @@ baseurl: "http://shucaoxiaobo.github.io" # the prefix of your site uri, eg. `/bo
 description: 曹晓波的个人博客
 # Your information
 email: xiaobo4life@gmail.com
-author: xiaobo #yourname #天道总司
-place: Shanghai #杭州
-domain: yourdoamain #互联网
-company: yourcompany #Jeeyoo
-position: yourjob #Technical Support
-school: Shanghai University #浙江科技学院
-major: yourmajoy #测控技术与仪器
+author: 曹晓波 #yourname #天道总司
+place: 上海 #杭州
+domain: 广告 #互联网
+company: 待业青年 #Jeeyoo
+position: 学生 #Technical Support
+school: 上海大学 #浙江科技学院
+major: 广告学 #测控技术与仪器
 resume: "http://zhaoyuxiang.cn/cv"
 profile: 事无所成，志无所定，技无所长。 #yourmotto #聪明在于勤奋，天才在于积累。
 twitter_username:
