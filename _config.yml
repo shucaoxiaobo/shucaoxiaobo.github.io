@@ -1,44 +1,14 @@
-# Site settings
-title: CaoHu
-url: "http://shucaoxiaobo.github.io/"    # the protocol and hostname of your site, eg. `http://zhaoyuxiang.cn/blog`
-baseurl: "http://shucaoxiaobo.github.io" # the prefix of your site uri, eg. `/bohu-jekyll-theme` or just one slash `/`
-#timezone: Asia/Shanghai
-description: 曹晓波的个人博客
-# Your information
-email: xiaobo4life@gmail.com
-author: 曹晓波 #yourname #天道总司
-place: 上海 #杭州
-domain: 广告 #互联网
-company: 待业青年 #Jeeyoo
-position: 学生 #Technical Support
-school: 上海大学 #浙江科技学院
-major: 广告学 #测控技术与仪器
-resume: "http://zhaoyuxiang.cn/cv"
-profile: 事无所成，志无所定，技无所长。 #yourmotto #聪明在于勤奋，天才在于积累。
-twitter_username:
-weibo_username:  gwiewonwne
-github_username:  shucaoxiaobo
-
-# Comment Service (Disqus or 多说)
-#  choose one and un-comment the line to active it
-disqus_shortname: zhaoyuxiang
-# get one: https://disqus.com/admin/signup/
-# duoshuo_shortname: clark-zhao
-# get one: http://duoshuo.com/create-site/
-
-permalink: /:title
-gems:
- - jekyll-paginate
- - jekyll-gist
- - jemoji
-
-# Build settings
-paginate: 2
-paginate_path: "/page:num"
-
-highlighter: rouge
+auto: true
+baseurl: "http://luozm.github.io/"
 markdown: kramdown
 
 kramdown:
-  input: GFM
-  syntax_highlighter: rouge
+    input: GFM
+rouge: true
+paginate: 8
+permalink: /:title
+
+title: Luozm's Blog
+url: http://luozm.github.io/Blog
+feed: /atom.xml
+author_info: <a href="http://luozm.github.io/Blog">Luozm</a>
