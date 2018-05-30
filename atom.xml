@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>my blog</title>
+  
+  <subtitle>run,Forrest,run...</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://yoursite.com/"/>
+  <updated>2017-09-28T07:42:07.000Z</updated>
+  <id>http://yoursite.com/</id>
+  
+  <author>
+    <name>Randall Cao</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>how-to-improve</title>
+    <link href="http://yoursite.com/2017/09/28/how-to-improve/"/>
+    <id>http://yoursite.com/2017/09/28/how-to-improve/</id>
+    <published>2017-09-28T03:26:40.000Z</published>
+    <updated>2017-09-28T07:42:07.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="2017年-Q4季度学习计划"><a href="#2017年-Q4季度学习计划" class="headerlink" title="2017年 Q4季度学习计划"></a>2017年 Q4季度学习计划</h1><h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><p>早在我大一的时候就看到过这样的一篇文章，<a href="http://www.moonshile.com/post/how-to-improve" target="_blank" rel="external">如何在一年之内提高自己</a>，当时给我的震撼是无以伦比的，尽管在我大一到大三的这段时间里，见识了许许多多优秀的人给我带来各式各样的体验，但这毕竟是第一次接触到这样“目标-计划-执行-反馈”的模式。</p><p>当时的感受真的是，犹如普罗米修斯给人间带来初火般，那时刚刚高考结束，脑袋里一直有些懵懂未开的想法。但初入大学，时间多得犹如回到了童年，这是踏入校园之后从未体验过的，能玩游戏玩到无聊看着太阳发呆。心中积郁很多无名的东西，好像不该这么放纵，因为我已经到了某个年纪了。社会给了大学生不用承担社会责任的四年，究竟是为了什么呢？</p><p>思索很多，这也是自高考结束后第一次执笔，真的是把话说出来是一套，把话写出来又是一套，有些话如鲠在喉，还是以后慢慢梳理写出来吧。</p><h2 id="几个关键"><a href="#几个关键" class="headerlink" title="几个关键"></a>几个关键</h2><p>清晰的目标<br>时间安排<br>执行与反馈<br>心理状态与生理状态</p><h2 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h2><ol><li>围绕着b站的机器学习岗位建立知识体系</li><li>围绕着python书建立基本coding experience</li><li>围绕托福考试建立英语体系的建立</li><li>围绕实习导向建立一些择业的了解</li></ol><h2 id="时间安排"><a href="#时间安排" class="headerlink" title="时间安排"></a>时间安排</h2><ul><li>国庆长假：一个好的开始很重要，前三个目标最好能在长假的时候打下基础，万事开头难，国庆长假需要啃一些东西，适应一些东西。</li><li>正常读书时期，每周1-3上课时间，4-7学习时间</li><li>week6时期：争取万行python，拿下一个模型</li><li>week7全周集中攻克课程报告</li><li>week8课程报告各类结尾</li><li>week9-10分配时间进行托福集中攻克</li><li>week11-week12 托福封闭式学习</li></ul><h2 id="执行与反馈"><a href="#执行与反馈" class="headerlink" title="执行与反馈"></a>执行与反馈</h2><p>执行能说的也不多，争取每天一篇小结<br>反馈：</p><ul><li>机器学习-知乎</li><li>python-源码小结</li><li>托福-每日小结</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;2017年-Q4季度学习计划&quot;&gt;&lt;a href=&quot;#2017年-Q4季度学习计划&quot; class=&quot;headerlink&quot; title=&quot;2017年 Q4季度学习计划&quot;&gt;&lt;/a&gt;2017年 Q4季度学习计划&lt;/h1&gt;&lt;h2 id=&quot;引言&quot;&gt;&lt;a href=&quot;#引言&quot;
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>hello world</title>
+    <link href="http://yoursite.com/2017/09/22/hello-world-1/"/>
+    <id>http://yoursite.com/2017/09/22/hello-world-1/</id>
+    <published>2017-09-22T04:10:54.000Z</published>
+    <updated>2017-09-22T09:07:22.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>也看了不少别人写的各种博客，所以也就一时兴起自己慢慢开始积累一些自己的东西吧。<br>这样的一个博客权当作自己的笔记留存地，总之，让自己做的东西都留个底，说不定哪天就能用上，哈哈哈。<br>或许以后哪天回顾这样的一个博客，也会蛮有意思的。<br>嘻嘻</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;也看了不少别人写的各种博客，所以也就一时兴起自己慢慢开始积累一些自己的东西吧。&lt;br&gt;这样的一个博客权当作自己的笔记留存地，总之，让自己做的东西都留个底，说不定哪天就能用上，哈哈哈。&lt;br&gt;或许以后哪天回顾这样的一个博客，也会蛮有意思的。&lt;br&gt;嘻嘻&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+</feed>
